@@ -1,0 +1,4 @@
+VISPORT
+VCLIP
+S2 VNM T? DOANH (949 tu doanh)(S2 - Ðang ký;S2 - Log MO;S2 - Log MT;Thông tin khách hàng;Khách hàng kích ho?t;S2- Log charge;T? l? charge )
+WAP REPORTING( 3G - S2 VNM : La doanh thu cua 949 tu doanh; Báo cáo Wap VNM )

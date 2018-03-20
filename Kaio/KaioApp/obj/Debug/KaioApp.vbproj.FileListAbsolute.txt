@@ -1,0 +1,17 @@
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\KaioApp.exe.config
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\KaioApp.exe
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\KaioApp.pdb
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\KaioApp.xml
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.vbprojResolveAssemblyReference.cache
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.Resources.resources
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.vbproj.GenerateResource.Cache
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.exe
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.xml
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\obj\Debug\KaioApp.pdb
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Bson.dll
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Driver.Core.dll
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Driver.dll
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Bson.xml
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Driver.xml
+E:\Projects\netPrjs\Kaio\Kaio\KaioApp\bin\Debug\MongoDB.Driver.Core.xml

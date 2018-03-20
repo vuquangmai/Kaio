@@ -1,0 +1,137 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="S2DictIndexVNPServiceEdit.aspx.vb" Inherits="Prjs.Portal.Report.S2DictIndexVNPServiceEdit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <link href="../../Styles/HQ.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server" Transparency="30"
+            MinDisplayTime="500">
+            <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+            </telerik:RadScriptManager>
+        </telerik:RadAjaxLoadingPanel>
+        <telerik:RadAjaxManager ID="AjaxManager1" runat="server" DefaultLoadingPanelID="RadAjaxLoadingPanel1">
+            <AjaxSettings>
+                <telerik:AjaxSetting AjaxControlID="DropDownListChannel_Id">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="DropDownListParent_Id" />
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+                <telerik:AjaxSetting AjaxControlID="DropDownListTypeOfMenu">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="lblParent_Id" />
+                        <telerik:AjaxUpdatedControl ControlID="DropDownListParent_Id" />
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+            </AjaxSettings>
+        </telerik:RadAjaxManager>
+        <div id="HQ">
+            <div class="alert">
+                <asp:Label ID="lbltitle" runat="server" CssClass="lbltitle"></asp:Label><br />
+                <asp:Label ID="lblerror" runat="server" CssClass="lblerror"></asp:Label>
+            </div>
+            <div class="input">
+                <table border="0" cellpadding="2" cellspacing="1" style="width: 100%">
+                    <tr>
+                        <td align="right" width="20%">
+                            <asp:Label ID="Label7" runat="server" CssClass="label">Đối tác:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:DropDownList ID="DropDownListPartner_Id" runat="server" CssClass="droplist">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="20%">
+                            <asp:Label ID="Label29" runat="server" CssClass="label">Tỷ lê % đối tác hưởng:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtRatio_Share" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="10%" Font-Bold="True" ForeColor="Red"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" width="20%">
+                            <asp:Label ID="Label16" runat="server" CssClass="label">Đầu số:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtAccess_Number" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="10%" Font-Bold="True" ReadOnly="True">8979</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label18" runat="server" CssClass="label">Mã dịch vụ:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtService_Id" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="40%" ForeColor="Blue"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label26" runat="server" CssClass="label">Tên dịch vụ:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtService_Text" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="60%"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label27" runat="server" CssClass="label">Đơn giá:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtPricing" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="10%" Font-Bold="True" ForeColor="Red"></asp:TextBox>
+                            <asp:DropDownList ID="DropDownListPeriod_Id" runat="server" CssClass="droplist">
+                                <asp:ListItem Value="1">1 ngày</asp:ListItem>
+                                <asp:ListItem Value="7">1 tuần</asp:ListItem>
+                                <asp:ListItem Value="30">1 tháng</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label28" runat="server" CssClass="label">Cú pháp đăng ký:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtSubscription_Command_Word" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="30%"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label17" runat="server" CssClass="label">Cú pháp hủy:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtUnsubscription_Command_Word" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Width="30%" Font-Bold="False"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="Label9" runat="server" CssClass="label">Ghi chú:</asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:TextBox ID="txtDescription" runat="server" AutoCompleteType="Disabled" CssClass="txtContent"
+                                Height="96px" TextMode="MultiLine" Width="100%"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="submmit">
+                <asp:Button ID="btnUpdate" runat="server" CssClass="btnbackground"
+                    Text="Ghi lại" />
+                <asp:Button ID="btnDelete" runat="server" CssClass="btnbackground"
+                    Text="Xóa bỏ" />
+                <asp:Button ID="btnReturn" runat="server" CssClass="btnbackground"
+                    Text="Quay ra" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿/* ************************************************   
+Theme Name: Epic (Shared on www.themegain.com)
+Theme URI: http://www.themegain.com
+
+
+Description: The unique and equisite theme for companies and individuals with real taste.
+Author: Igniteflash & Weblusive 
+Author URI: http://www.themegain.com
+Version: 1.5 
+License: See on zip package
+License URI: See on zip package
+Tags: dark, light
+
+************************************************ */
+ 
+ 
+/* 200 x 200 */			
+.boxgrid{ 
+	width: 250px; 
+	height: 120px; 
+	margin-right:1px;
+	margin-bottom:1px; 
+	float:left;
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.9 opacity */
+	background:#ffffff; 
+	border: solid 10px #ffffff; 
+	overflow: hidden; 
+	position: relative;
+	box-shadow: 1px 1px 3px #777777;
+}
+.shadow200{
+	margin-bottom:20px;
+	height: 120px;
+	background-repeat:no-repeat;
+	background-position: bottom left;
+	overflow: hidden; 
+	position: relative;	
+	float:left;
+}
+.captionfull .boxcaption {
+	top: 200px;
+	left: 0;
+}
+.caption .boxcaption {
+	top: 160px;
+	left: 0;
+}
+.boxgrid img{ 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	border: 0; 
+}
+ 
+ 
+ .boxgrid span a{ 
+	margin-left:10px;
+	text-shadow:0 0 0 transparent, 0px 1px 0px #000000;
+	-moz-box-shadow: 0 1px 3px #ff6a00;
+	-webkit-box-shadow: 0 1px 3px #ff6a00;
+	border-top: 1px #999999 solid;
+	border-bottom: 0px #03202e solid;
+	border-right: 0px #0c6491 solid;
+	border-left: 0px #0c6491 solid;
+	background-color:#0c6491;
+	background-position:center;
+	background-repeat:repeat-x;	
+ 
+}
+.boxgrid span a:hover { 
+	background-position:center;
+	background-repeat:repeat-x;
+}
+.boxgrid p{ 
+	padding: 0 2px;
+	margin-bottom:10px; 
+	color:#999999; 
+	font-weight: normal; 
+	font-size:11px;
+	font-family:  Arial;
+	text-shadow:0 0 0 transparent, 0 0px 0px #000000;
+	line-height:17px;
+}
+.boxgrid h2{ 
+	padding: 0px 0px; 
+	color:#ffffff; 
+	font-weight:normal;
+	font-size:15px;
+	font-family:   Arial, sans-serif;
+	text-shadow:0 0 0 transparent, 0 1px 0px #000000;
+}
+.boxcaption{ 
+	float: left; 
+	position: absolute; 
+	background: #000000; 
+	height: 80px; 
+	width: 100%; 
+	opacity: .8; 
+	/* For IE 5-7 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	/* For IE 8 */
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+ 

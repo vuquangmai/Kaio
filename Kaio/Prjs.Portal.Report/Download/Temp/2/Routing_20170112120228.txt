@@ -1,0 +1,29 @@
+﻿<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="DEF"/>
+	<property name="operator" value="VIETTEL"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway70015VIETTEL</value>
+		</list>
+	</property>
+</bean>
+
+<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="GHK"/>
+	<property name="operator" value="VIETTEL"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway70015VIETTEL</value>
+		</list>
+	</property>
+</bean>
+
+<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="JNM"/>
+	<property name="operator" value="VIETTEL"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway70015VIETTEL</value>
+		</list>
+	</property>
+</bean>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript">
+       // var TotalSecond00_1615 = 16 * 60 * 60 + 15 * 60;// Tổng số giây tính từ 00:00:00 đến 16:15:00 (giờ, phút, giây)( Thời điểm bắt đầu quay xổ số Miền Bắc)
+        // var TotalSecond00_1630=16*60*60+30*60;// Tổng số giây tính từ 00:00:00 đến 16:00:00 (giờ, phút, giây)( Thời điểm kết thúc quay xổ số Miền Bắc)
+        var offset = 0;
+        var now = new Date();
+        var date1815 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 15, 0, 0);
+        var date1830 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 18, 30, 0, 0);
+        var date2400 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 0);
+        var date0000 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0,0, 0, 0);
+        var T1 = date1815.getTime() - now.getTime();
+        var T2 = date1830.getTime() - now.getTime();
+        if (T1 > 0)//Nếu thời gian hiện tại chưa đến thời điểm bắt đầu quay kết quả
+        {
+            offset = T1;
+        } else if(T2>0)//  Nếu đang trong khoảng thời gian quay kết quả
+        {
+            offset = 0;
+        } else// Nếu đã quay xong
+        {
+
+            var T3 = date2400.getTime() - now.getTime();
+            var T4 = date1815.getTime() - date0000.getTime();
+            offset = T3+T4;
+        }
+
+        alert(T3);
+        alert(T4);
+        alert(offset);
+       
+    </script>
+</head>
+<body>
+
+</body>
+</html>

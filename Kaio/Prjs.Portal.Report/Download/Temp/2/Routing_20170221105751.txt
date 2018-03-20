@@ -1,0 +1,39 @@
+﻿<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="CaliKids"/>
+	<property name="operator" value="VMS"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway8x79VMS</value>
+		</list>
+	</property>
+</bean>
+
+<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="CNI VN"/>
+	<property name="operator" value="VMS"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway8x79VMS</value>
+		</list>
+	</property>
+</bean>
+
+<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="MENINA SPA"/>
+	<property name="operator" value="VMS"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway8x79VMS</value>
+		</list>
+	</property>
+</bean>
+
+<bean class="com.vmg.ems.router.impl.mt.GatewayMapInfo">
+	<property name="shortCode" value="NINH KHUONG"/>
+	<property name="operator" value="VMS"/>
+	<property name="gatewayUri">
+		<list>
+			<value>activemq:queue://gateway8x79VMS</value>
+		</list>
+	</property>
+</bean>

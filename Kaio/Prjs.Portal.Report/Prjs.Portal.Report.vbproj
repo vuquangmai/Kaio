@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{3F2E0209-CF00-47D6-AEC9-EEF35CD7385B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Prjs.Portal.Report</RootNamespace>
+    <AssemblyName>Prjs.Portal.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Prjs.Portal.Report.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Prjs.Portal.Report.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ASPnetPagerV2_8">
+      <HintPath>LibEnv\ASPnetPagerV2_8.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocX">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="FilePicker, Version=2.1.1587.43034, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LibEnv\FilePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="FilePickerControl, Version=2.0.4583.40890, Culture=neutral, PublicKeyToken=b6c783efc483733b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LibEnv\FilePickerControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>LibEnv\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>LibEnv\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.5.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.4.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>LibEnv\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.5.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.Design">
+      <HintPath>LibEnv\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>LibEnv\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>LibEnv\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="webmsgbox">
+      <HintPath>LibEnv\webmsgbox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDenied.aspx" />
+    <Content Include="Administrator\DictIndex\AdminConfidenceEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminConfidenceList.aspx" />
+    <Content Include="Administrator\DictIndex\AdminCooperateModelEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminCooperateModelList.aspx" />
+    <Content Include="Administrator\DictIndex\AdminDepartmentEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminDepartmentList.aspx" />
+    <Content Include="Administrator\DictIndex\AdminMobileOperatorEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminMobileOperatorList.aspx" />
+    <Content Include="Administrator\Lott\LottUserPrivilege.aspx" />
+    <Content Include="Administrator\Lott\LottUsersList.aspx" />
+    <Content Include="Administrator\Users\AdminUsersEdit.aspx" />
+    <Content Include="Administrator\Users\AdminUsersList.aspx" />
+    <Content Include="AndroidApps\DictIndex\AndroidAppsDictIndexEdit.aspx" />
+    <Content Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackEdit.aspx" />
+    <Content Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackList.aspx" />
+    <Content Include="AndroidApps\DictIndex\AndroidAppsDictIndexList.aspx" />
+    <Content Include="AndroidApps\DictIndex\AndroidAppsDictIndexAPKCrawList.aspx" />
+    <Content Include="Administrator\DictIndex\AdminServiceInfoEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminServiceInfoList.aspx" />
+    <Content Include="Administrator\DictIndex\AdminStaffInternalEdit.aspx" />
+    <Content Include="Administrator\DictIndex\AdminStaffInternalList.aspx" />
+    <Content Include="Administrator\Group\AdminGroupUserEdit.aspx" />
+    <Content Include="Administrator\Group\AdminGroupUserList.aspx" />
+    <Content Include="Administrator\Group\AdminGroupUserPrivilege.aspx" />
+    <Content Include="Administrator\Group\AdminGroupUserUrl.aspx" />
+    <Content Include="Administrator\MenuleftTop.aspx" />
+    <Content Include="Administrator\SplitOut.aspx" />
+    <Content Include="Administrator\Banner.aspx" />
+    <Content Include="Administrator\Footer.aspx" />
+    <Content Include="Administrator\Index.aspx" />
+    <Content Include="Administrator\Menuleft.aspx" />
+    <Content Include="Administrator\MenuLeftFooter.aspx" />
+    <Content Include="Administrator\SplitOutFooter.aspx" />
+    <Content Include="Administrator\Url\AdminUrlEdit.aspx" />
+    <Content Include="Administrator\Url\AdminUrlList.aspx" />
+    <Content Include="AndroidApps\Banner.aspx" />
+    <Content Include="AndroidApps\Footer.aspx" />
+    <Content Include="AndroidApps\Index.aspx" />
+    <Content Include="AndroidApps\Menuleft.aspx" />
+    <Content Include="AndroidApps\MenuLeftFooter.aspx" />
+    <Content Include="Ccare\Banner.aspx" />
+    <Content Include="Ccare\Footer.aspx" />
+    <Content Include="Ccare\Index.aspx" />
+    <Content Include="Ccare\Menuleft.aspx" />
+    <Content Include="Ccare\MenuLeftFooter.aspx" />
+    <Content Include="FilePicker\FileBrowse.aspx" />
+    <Content Include="FilePicker\FilePicker.aspx" />
+    <Content Include="FilePicker\Images\Bottom.gif" />
+    <Content Include="FilePicker\Images\browse.gif" />
+    <Content Include="FilePicker\Images\Cancel.gif" />
+    <Content Include="FilePicker\Images\CheckMask.gif" />
+    <Content Include="FilePicker\Images\CheckMaskOff.gif" />
+    <Content Include="FilePicker\Images\Copy.gif" />
+    <Content Include="FilePicker\Images\CopyOff.gif" />
+    <Content Include="FilePicker\Images\Cut.gif" />
+    <Content Include="FilePicker\Images\CutOff.gif" />
+    <Content Include="FilePicker\Images\Delete.gif" />
+    <Content Include="FilePicker\Images\DeleteOff.gif" />
+    <Content Include="FilePicker\Images\Download.gif" />
+    <Content Include="FilePicker\Images\DownloadFile.gif" />
+    <Content Include="FilePicker\Images\DownloadFolder.gif" />
+    <Content Include="FilePicker\Images\DownloadOff.gif" />
+    <Content Include="FilePicker\Images\Download_small.gif" />
+    <Content Include="FilePicker\Images\Find.gif" />
+    <Content Include="FilePicker\Images\FindOff.gif" />
+    <Content Include="FilePicker\Images\Go.gif" />
+    <Content Include="FilePicker\Images\header_bg.gif" />
+    <Content Include="FilePicker\Images\header_bg1.gif" />
+    <Content Include="FilePicker\Images\History.gif" />
+    <Content Include="FilePicker\Images\Icons\Bat.gif" />
+    <Content Include="FilePicker\Images\Icons\Bmp.gif" />
+    <Content Include="FilePicker\Images\Icons\Doc.gif" />
+    <Content Include="FilePicker\Images\Icons\File.gif" />
+    <Content Include="FilePicker\Images\Icons\Folder.gif" />
+    <Content Include="FilePicker\Images\Icons\Gif.gif" />
+    <Content Include="FilePicker\Images\Icons\Html.gif" />
+    <Content Include="FilePicker\Images\Icons\Ini.gif" />
+    <Content Include="FilePicker\Images\Icons\Jpg.gif" />
+    <Content Include="FilePicker\Images\Icons\Mdb.gif" />
+    <Content Include="FilePicker\Images\Icons\Mp3.gif" />
+    <Content Include="FilePicker\Images\Icons\Msi.gif" />
+    <Content Include="FilePicker\Images\Icons\Pdf.gif" />
+    <Content Include="FilePicker\Images\Icons\Psp.gif" />
+    <Content Include="FilePicker\Images\Icons\Snp.gif" />
+    <Content Include="FilePicker\Images\Icons\Text.gif" />
+    <Content Include="FilePicker\Images\Icons\Ttf.gif" />
+    <Content Include="FilePicker\Images\Icons\Unknown.gif" />
+    <Content Include="FilePicker\Images\Icons\Vsd.gif" />
+    <Content Include="FilePicker\Images\Icons\Wma.gif" />
+    <Content Include="FilePicker\Images\Icons\Xls.gif" />
+    <Content Include="FilePicker\Images\Icons\Zip.gif" />
+    <Content Include="FilePicker\Images\New.gif" />
+    <Content Include="FilePicker\Images\NewFolder.gif" />
+    <Content Include="FilePicker\Images\NewFolderOff.gif" />
+    <Content Include="FilePicker\Images\Ok.gif" />
+    <Content Include="FilePicker\Images\OnlyZip.gif" />
+    <Content Include="FilePicker\Images\Paste.gif" />
+    <Content Include="FilePicker\Images\PasteOff.gif" />
+    <Content Include="FilePicker\Images\Progress.gif" />
+    <Content Include="FilePicker\Images\Properties.gif" />
+    <Content Include="FilePicker\Images\RecycleBinEmpty.gif" />
+    <Content Include="FilePicker\Images\RecycleBinFull.gif" />
+    <Content Include="FilePicker\Images\Refresh.gif" />
+    <Content Include="FilePicker\Images\Rename.gif" />
+    <Content Include="FilePicker\Images\Restore.gif" />
+    <Content Include="FilePicker\Images\ReverseCheck.gif" />
+    <Content Include="FilePicker\Images\Root.gif" />
+    <Content Include="FilePicker\Images\Save.gif" />
+    <Content Include="FilePicker\Images\Search.gif" />
+    <Content Include="FilePicker\Images\SearchOff.gif" />
+    <Content Include="FilePicker\Images\Separador.gif" />
+    <Content Include="FilePicker\Images\Stop.gif" />
+    <Content Include="FilePicker\Images\ThumbNail.gif" />
+    <Content Include="FilePicker\Images\ThumbNailOff.gif" />
+    <Content Include="FilePicker\Images\Top.gif" />
+    <Content Include="FilePicker\Images\Unzip.gif" />
+    <Content Include="FilePicker\Images\UnzipHere.gif" />
+    <Content Include="FilePicker\Images\Up.gif" />
+    <Content Include="FilePicker\Images\Upload.gif" />
+    <Content Include="FilePicker\Images\UploadOff.gif" />
+    <Content Include="FilePicker\Images\View.gif" />
+    <Content Include="FilePicker\Images\ZipDownload.gif" />
+    <Content Include="FilePicker\Images\__ReverseCheck.gif" />
+    <Content Include="FilePicker\menu.js" />
+    <Content Include="FilePicker\Styles.css" />
+    <Content Include="FilePicker\thumbnailimage.aspx" />
+    <Content Include="Images\del.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\options-icon.png" />
+    <Content Include="Images\signin.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\btnground.gif" />
+    <Content Include="Images\footer_menu.gif" />
+    <Content Include="Images\footer_menu_title.gif" />
+    <Content Include="Images\login.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logoCC.png" />
+    <Content Include="Images\menu_background.png" />
+    <Content Include="Images\Profile-icon.png" />
+    <Content Include="InternalError.htm" />
+    <Content Include="Js\countdown.js" />
+    <Content Include="Js\Menu3.js" />
+    <Content Include="Js\Interface.js" />
+    <Content Include="Js\Menu.js" />
+    <Content Include="Js\xp_progress.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Lott\Youtube\examples\Clock.aspx" />
+    <Content Include="Lott\Youtube\compiled\fclock.css" />
+    <Content Include="Lott\Youtube\compiled\flipclock.js" />
+    <Content Include="Lott\Youtube\compiled\flipclock.min.js" />
+    <Content Include="Lott\Youtube\compiled\jquery.min.js" />
+    <Content Include="Lott\Youtube\examples\base.html" />
+    <Content Include="Lott\Youtube\examples\countdown-from-new-years-without-seconds.html" />
+    <Content Include="Lott\Youtube\examples\countdown-from-new-years.html" />
+    <Content Include="Lott\Youtube\examples\countdown-start-callback.html" />
+    <Content Include="Lott\Youtube\examples\countdown-stop-callback.html" />
+    <Content Include="Lott\Youtube\examples\countdown-to-new-years-without-seconds.html" />
+    <Content Include="Lott\Youtube\examples\countdown-to-new-years.html" />
+    <Content Include="Lott\Youtube\examples\daily-counter-countdown.html" />
+    <Content Include="Lott\Youtube\examples\daily-counter.html" />
+    <Content Include="Lott\Youtube\examples\hourly-counter.html" />
+    <Content Include="Lott\Youtube\examples\interval-callback.html" />
+    <Content Include="Lott\Youtube\examples\load-new-clock-face.html" />
+    <Content Include="Lott\Youtube\examples\localization.html" />
+    <Content Include="Lott\Youtube\examples\minute-counter-overflow.html" />
+    <Content Include="Lott\Youtube\examples\minute-counter.html" />
+    <Content Include="Lott\Youtube\examples\multiple-instances.html" />
+    <Content Include="Lott\Youtube\examples\simple-countdown-autostart.html" />
+    <Content Include="Lott\Youtube\examples\simple-counter-autostart.html" />
+    <Content Include="Lott\Youtube\examples\simple-counter-minimum-digits.html" />
+    <Content Include="Lott\Youtube\examples\simple-counter.html" />
+    <Content Include="Lott\Youtube\examples\test.html" />
+    <Content Include="Lott\Youtube\examples\twelve-hour-clock-custom-time.html" />
+    <Content Include="Lott\Youtube\examples\twelve-hour-clock-without-seconds.html" />
+    <Content Include="Lott\Youtube\examples\twelve-hour-clock.html" />
+    <Content Include="Lott\Youtube\examples\twenty-four-hour-clock-custom-time.html" />
+    <Content Include="Lott\Youtube\examples\twenty-four-hour-clock-without-seconds.html" />
+    <Content Include="Lott\Youtube\examples\twenty-four-hour-clock.html" />
+    <Content Include="Lott\Youtube\flipclock.css" />
+    <Content Include="Lott\Youtube\flipclock.js" />
+    <Content Include="Lott\Youtube\flipclock.min.js" />
+    <Content Include="Lott\Youtube\CountDownClock.aspx" />
+    <Content Include="Lott\Youtube\HtmlPage1.html" />
+    <Content Include="Lott\Youtube\LiveResult.aspx" />
+    <Content Include="MongodbConnect.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Styles\Channel.css" />
+    <Content Include="Styles\Error.css" />
+    <Content Include="Styles\HQ.css" />
+    <Content Include="Styles\RadTreeView.css" />
+    <Content Include="Styles\StyleSheet1.css" />
+    <Content Include="Templates\Email\UserInformation.xslt" />
+    <Content Include="Administrator\UserInfo\CurrentUserInfo.aspx" />
+    <Content Include="Administrator\UserInfo\UserInfoChangePassWord.aspx" />
+    <Content Include="Administrator\UserInfo\UserProfile.aspx" />
+    <Content Include="Templates\SMS\Finance_SMS_Rev_2.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\SMS\Copy of Test.xml" />
+    <Content Include="Templates\SMS\Finance_SMS_Rev_2.bk.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Templates\SMS\Test.xml" />
+    <Content Include="Templates\SMS\Test.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\custom.js" />
+    <Content Include="Themes\jquery.js" />
+    <Content Include="Themes\Stylet1.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDenied.aspx.designer.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.vb">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminConfidenceEdit.aspx.designer.vb">
+      <DependentUpon>AdminConfidenceEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminConfidenceEdit.aspx.vb">
+      <DependentUpon>AdminConfidenceEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminConfidenceList.aspx.designer.vb">
+      <DependentUpon>AdminConfidenceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminConfidenceList.aspx.vb">
+      <DependentUpon>AdminConfidenceList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminCooperateModelEdit.aspx.designer.vb">
+      <DependentUpon>AdminCooperateModelEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminCooperateModelEdit.aspx.vb">
+      <DependentUpon>AdminCooperateModelEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminCooperateModelList.aspx.designer.vb">
+      <DependentUpon>AdminCooperateModelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminCooperateModelList.aspx.vb">
+      <DependentUpon>AdminCooperateModelList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminDepartmentEdit.aspx.designer.vb">
+      <DependentUpon>AdminDepartmentEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminDepartmentEdit.aspx.vb">
+      <DependentUpon>AdminDepartmentEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminDepartmentList.aspx.designer.vb">
+      <DependentUpon>AdminDepartmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminDepartmentList.aspx.vb">
+      <DependentUpon>AdminDepartmentList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminMobileOperatorEdit.aspx.designer.vb">
+      <DependentUpon>AdminMobileOperatorEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminMobileOperatorEdit.aspx.vb">
+      <DependentUpon>AdminMobileOperatorEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminMobileOperatorList.aspx.designer.vb">
+      <DependentUpon>AdminMobileOperatorList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminMobileOperatorList.aspx.vb">
+      <DependentUpon>AdminMobileOperatorList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Lott\LottUserPrivilege.aspx.designer.vb">
+      <DependentUpon>LottUserPrivilege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Lott\LottUserPrivilege.aspx.vb">
+      <DependentUpon>LottUserPrivilege.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Lott\LottUsersList.aspx.designer.vb">
+      <DependentUpon>LottUsersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Lott\LottUsersList.aspx.vb">
+      <DependentUpon>LottUsersList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Users\AdminUsersEdit.aspx.designer.vb">
+      <DependentUpon>AdminUsersEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Users\AdminUsersEdit.aspx.vb">
+      <DependentUpon>AdminUsersEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Users\AdminUsersList.aspx.designer.vb">
+      <DependentUpon>AdminUsersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Users\AdminUsersList.aspx.vb">
+      <DependentUpon>AdminUsersList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexEdit.aspx.designer.vb">
+      <DependentUpon>AndroidAppsDictIndexEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexEdit.aspx.vb">
+      <DependentUpon>AndroidAppsDictIndexEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackEdit.aspx.designer.vb">
+      <DependentUpon>AndroidAppsDictIndexKwBlackEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackEdit.aspx.vb">
+      <DependentUpon>AndroidAppsDictIndexKwBlackEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackList.aspx.designer.vb">
+      <DependentUpon>AndroidAppsDictIndexKwBlackList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexKwBlackList.aspx.vb">
+      <DependentUpon>AndroidAppsDictIndexKwBlackList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexList.aspx.designer.vb">
+      <DependentUpon>AndroidAppsDictIndexList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexList.aspx.vb">
+      <DependentUpon>AndroidAppsDictIndexList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexAPKCrawList.aspx.designer.vb">
+      <DependentUpon>AndroidAppsDictIndexAPKCrawList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\DictIndex\AndroidAppsDictIndexAPKCrawList.aspx.vb">
+      <DependentUpon>AndroidAppsDictIndexAPKCrawList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="API\SubscriptionService\S294xTool.vb" />
+    <Compile Include="BizLogic\ChannelInfo.vb" />
+    <Compile Include="Administrator\DictIndex\AdminServiceInfoEdit.aspx.designer.vb">
+      <DependentUpon>AdminServiceInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminServiceInfoEdit.aspx.vb">
+      <DependentUpon>AdminServiceInfoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminServiceInfoList.aspx.designer.vb">
+      <DependentUpon>AdminServiceInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminServiceInfoList.aspx.vb">
+      <DependentUpon>AdminServiceInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminStaffInternalEdit.aspx.designer.vb">
+      <DependentUpon>AdminStaffInternalEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminStaffInternalEdit.aspx.vb">
+      <DependentUpon>AdminStaffInternalEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminStaffInternalList.aspx.designer.vb">
+      <DependentUpon>AdminStaffInternalList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\DictIndex\AdminStaffInternalList.aspx.vb">
+      <DependentUpon>AdminStaffInternalList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserEdit.aspx.designer.vb">
+      <DependentUpon>AdminGroupUserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserEdit.aspx.vb">
+      <DependentUpon>AdminGroupUserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserList.aspx.designer.vb">
+      <DependentUpon>AdminGroupUserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserList.aspx.vb">
+      <DependentUpon>AdminGroupUserList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserPrivilege.aspx.designer.vb">
+      <DependentUpon>AdminGroupUserPrivilege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserPrivilege.aspx.vb">
+      <DependentUpon>AdminGroupUserPrivilege.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserUrl.aspx.designer.vb">
+      <DependentUpon>AdminGroupUserUrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Group\AdminGroupUserUrl.aspx.vb">
+      <DependentUpon>AdminGroupUserUrl.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\MenuleftTop.aspx.designer.vb">
+      <DependentUpon>MenuleftTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\MenuleftTop.aspx.vb">
+      <DependentUpon>MenuleftTop.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\SplitOut.aspx.designer.vb">
+      <DependentUpon>SplitOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\SplitOut.aspx.vb">
+      <DependentUpon>SplitOut.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Banner.aspx.designer.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Banner.aspx.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Footer.aspx.designer.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Footer.aspx.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Menuleft.aspx.designer.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Menuleft.aspx.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\MenuLeftFooter.aspx.designer.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\MenuLeftFooter.aspx.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\SplitOutFooter.aspx.designer.vb">
+      <DependentUpon>SplitOutFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\SplitOutFooter.aspx.vb">
+      <DependentUpon>SplitOutFooter.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Url\AdminUrlEdit.aspx.designer.vb">
+      <DependentUpon>AdminUrlEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Url\AdminUrlEdit.aspx.vb">
+      <DependentUpon>AdminUrlEdit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\Url\AdminUrlList.aspx.designer.vb">
+      <DependentUpon>AdminUrlList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\Url\AdminUrlList.aspx.vb">
+      <DependentUpon>AdminUrlList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BizLogic\UserInfo.vb" />
+    <Compile Include="AndroidApps\Banner.aspx.designer.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\Banner.aspx.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\Footer.aspx.designer.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\Footer.aspx.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\Menuleft.aspx.designer.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\Menuleft.aspx.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AndroidApps\MenuLeftFooter.aspx.designer.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AndroidApps\MenuLeftFooter.aspx.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ccare\Banner.aspx.designer.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ccare\Banner.aspx.vb">
+      <DependentUpon>Banner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ccare\Footer.aspx.designer.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ccare\Footer.aspx.vb">
+      <DependentUpon>Footer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ccare\Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ccare\Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ccare\Menuleft.aspx.designer.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ccare\Menuleft.aspx.vb">
+      <DependentUpon>Menuleft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ccare\MenuLeftFooter.aspx.designer.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ccare\MenuLeftFooter.aspx.vb">
+      <DependentUpon>MenuLeftFooter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Constants.vb" />
+    <Compile Include="Common\LogService.vb" />
+    <Compile Include="Common\SessionInfo.vb" />
+    <Compile Include="Common\Util.vb" />
+    <Compile Include="Common\ViewStateInfo.vb" />
+    <Compile Include="DataAccess\DeleteObject.vb" />
+    <Compile Include="DataAccess\ObjDataTable.vb" />
+    <Compile Include="DataAccess\ObjDataReader.vb" />
+    <Compile Include="DataAccess\UpdateObject.vb" />
+    <Compile Include="DataControl\IsSqlConnection.vb" />
+    <Compile Include="DataControl\IsLiveConnection.vb" />
+    <Compile Include="DataControl\MSSQLEnv.vb" />
+    <Compile Include="DataControl\MySQLEnv.vb" />
+    <Compile Include="DataControl\OracleEnv.vb" />
+    <Compile Include="Export\CreateFileCsv.vb" />
+    <Compile Include="Export\CreateFileXls.vb" />
+    <Compile Include="Export\ExportData.vb" />
+    <Compile Include="FilePicker\FilePicker.aspx.vb">
+      <DependentUpon>FilePicker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilePicker\thumbnailimage.aspx.vb">
+      <DependentUpon>thumbnailimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.designer.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Helper\MSSQLHelper.vb" />
+    <Compile Include="Helper\MySQLHelper.vb" />
+    <Compile Include="Helper\OracleHelper.vb" />
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lott\Youtube\examples\Clock.aspx.designer.vb">
+      <DependentUpon>Clock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lott\Youtube\examples\Clock.aspx.vb">
+      <DependentUpon>Clock.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lott\Youtube\CountDownClock.aspx.designer.vb">
+      <DependentUpon>CountDownClock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lott\Youtube\CountDownClock.aspx.vb">
+      <DependentUpon>CountDownClock.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lott\Youtube\LiveResult.aspx.designer.vb">
+      <DependentUpon>LiveResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lott\Youtube\LiveResult.aspx.vb">
+      <DependentUpon>LiveResult.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Lott\Youtube\ObjResult.vb" />
+    <Compile Include="Module\GlobalManager.vb" />
+    <Compile Include="MongodbConnect.aspx.designer.vb">
+      <DependentUpon>MongodbConnect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MongodbConnect.aspx.vb">
+      <DependentUpon>MongodbConnect.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentation\Email\EmailData.vb" />
+    <Compile Include="Presentation\Email\EmailPacket.vb" />
+    <Compile Include="Administrator\UserInfo\CurrentUserInfo.aspx.designer.vb">
+      <DependentUpon>CurrentUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\UserInfo\CurrentUserInfo.aspx.vb">
+      <DependentUpon>CurrentUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\UserInfo\UserInfoChangePassWord.aspx.designer.vb">
+      <DependentUpon>UserInfoChangePassWord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\UserInfo\UserInfoChangePassWord.aspx.vb">
+      <DependentUpon>UserInfoChangePassWord.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Administrator\UserInfo\UserProfile.aspx.designer.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\UserInfo\UserProfile.aspx.vb">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FilePicker\FilePicker.aspx.resx">
+      <DependentUpon>FilePicker.aspx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePicker\thumbnailimage.aspx.resx">
+      <DependentUpon>thumbnailimage.aspx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FilePicker\Images\Icons\vssver.scc" />
+    <Content Include="FilePicker\Images\vssver.scc" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\HQ.Pub.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Themes\jquery.prettyPhoto.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="LibEnv\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>38581</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24422/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

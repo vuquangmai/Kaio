@@ -1,0 +1,65 @@
+﻿ 
+div.hover-border:hover:before {
+  top: 0;
+  left: 0;
+}
+div.hover-border:hover:after {
+  top: 0;
+  right: 0;
+}
+div.hover-border:hover div.hover-border-inner:before {
+  top: 0;
+  left: 0;
+}
+div.hover-border:hover div.hover-border-inner:after {
+  bottom: 0;
+  left: 0;
+}
+
+div.hover-border,
+div.hover-border-inner {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+div.hover-border:before, div.hover-border:after,
+div.hover-border-inner:before,
+div.hover-border-inner:after {
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
+  content: " ";
+  display: block;
+  position: absolute;
+  z-index: 99;
+  background: #009bcb;
+}
+
+div.hover-border:before, div.hover-border:after {
+  height: 100%;
+  width: 1px;
+}
+div.hover-border:before {
+  top: -100%;
+  left: 0;
+}
+div.hover-border:after {
+  top: 100%;
+  right: 0;
+}
+
+div.hover-border-inner {
+  border: 1px solid #ebebeb;
+}
+div.hover-border-inner:before, div.hover-border-inner:after {
+  height: 1px;
+  width: 100%;
+}
+div.hover-border-inner:before {
+  top: 0;
+  left: 100%;
+}
+div.hover-border-inner:after {
+  bottom: 0;
+  left: -100%;
+}
+ 

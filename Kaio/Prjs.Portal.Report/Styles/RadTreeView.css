@@ -1,0 +1,87 @@
+﻿a.rtIn{
+    /*background-color:#ffdea0 !important;*/
+   font-family:Arial    !important;
+   font-size:11px     !important;
+}
+ 
+
+.RadComboBox_Hay .rcbFocused .rcbInput {
+    color: #185d00;
+     font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox table td.rcbInputCell, .RadComboBox .rcbInputCell .rcbInput {
+    padding-left: 2px;
+     font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox .rcbReadOnly .rcbInput {
+    cursor: default;
+     font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox .rcbInputCell .rcbInput {
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    outline: 0 none;
+    padding: 2px 0 1px;
+    vertical-align: middle;
+    width: 100%;
+     font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox .rcbInputCell .rcbInput {
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    font-family: Arial !important;
+    font-size: 11px !important;
+    outline: 0 none;
+    padding: 2px 0 1px;
+    vertical-align: middle;
+    width: 100%;
+     font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox .rcbReadOnly .rcbInput {
+    cursor: default;
+    font-family: Arial !important;
+    font-size: 11px !important;
+}
+.RadComboBox table td.rcbInputCell, .RadComboBox .rcbInputCell .rcbInput {
+    font-family: Arial !important;
+    font-size: 11px !important;
+    padding-left: 2px;
+}
+.RadComboBox_Hay, .RadComboBox_Hay .rcbInput, .RadComboBoxDropDown_Hay {
+    color: #272722;
+   font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox, .RadComboBox .rcbInput, .RadComboBoxDropDown {
+    text-align: left;
+}
+.RadComboBox * {
+    margin: 0;
+    padding: 0;
+}
+ 
+.RadComboBox table td.rcbInputCell {
+    line-height: 20px;
+}
+.RadComboBox table td.rcbInputCell, .RadComboBox .rcbInputCell .rcbInput {
+    font-family: Arial !important;
+    font-size: 11px !important;
+}
+ 
+.RadComboBox table {
+    border-collapse: collapse;
+}
+.RadComboBox_Hay, .RadComboBox_Hay .rcbInput, .RadComboBoxDropDown_Hay {
+    color: #272722;
+    font-family:Arial    !important;
+   font-size:11px     !important;
+}
+.RadComboBox, .RadComboBox .rcbInput, .RadComboBoxDropDown {
+    text-align: left;
+}
+ 
